@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title=title
+    link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css")
+    link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(
+      src='https://code.jquery.com/jquery-3.1.0.slim.min.js'
+      integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="
+      crossorigin="anonymous"
+    )
+
+    script
+      include ./script.js
+
+    style
+      include ./style.css
+
+  body.container.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3.col-xs-12
+    h1.page-header
+      span=title
+      span#reload
+
+    .col-sm-12
+      p.info=q.text
+
+    if q.data.info
+      .col-sm-12
+        .alert.alert-info=q.data.info
+
+    .col-sm-12
+      form.form-horizontal
+        .form-group
+          label.control-label.col-sm-2(for='answer') Answer
+          .col-sm-10
+            .input-group
+              input.form-control#answer(type='text' name='answer' expect=q.data.answer placholder='?')
+              span.input-group-addon=q.data.unit
+        .form-group
+          .col-sm-6
+            span#result
+          .col-sm-6
+            button.btn.btn-success.pull-right#check Check Answer

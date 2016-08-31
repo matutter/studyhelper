@@ -1,0 +1,35 @@
+p {
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+#result {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+#reload {
+  font-size: 12px;
+  float: right;
+}
+
+.success-body {
+  animation: flash 900ms ease;
+  animation-iteration-count: 5;
+}
+
+@keyframes flash {
+    0% {
+        background-color: #00ff80;
+        opacity:1;
+    }
+    22% {
+        background-color: #00ffff;
+    }
+    77% {
+        background-color: #0080ff;
+    }
+    100% {
+        background-color: #0040ff;
+    }
+}
